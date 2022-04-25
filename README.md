@@ -13,3 +13,4 @@ bash like shell implementation
  * cd ..
  * rm fileName
  * copy fileName
+ * pwd
