@@ -12,4 +12,4 @@ bash like shell implementation
  * cd directory
  * cd ..
  * rm fileName
- * copu fileName
+ * copy fileName
