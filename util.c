@@ -87,6 +87,7 @@ void parse(){
     if(strcmp(ARGS[0],"cd")==0){changeDir();}
     if(strcmp(ARGS[0],"rm")==0){delete();}
     if(strcmp(ARGS[0],"copy")==0){copy();}
+    if(strcmp(ARGS[0],"pwd")==0){pwd();}
 }
 
 

@@ -72,3 +72,8 @@ void copy(){
    fclose(source);
 
 }
+
+void pwd(){
+    getcwd(CWD, sizeof(CWD));
+    printf("%s\n",CWD);
+}
