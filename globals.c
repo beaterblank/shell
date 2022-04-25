@@ -6,6 +6,9 @@
 
 #define PROMPT_MAX 10
 
+#define CLEAR "\e[1;1H\e[2J"
+
+
 #define RED    "\x1B[31m"
 #define GRN    "\x1B[32m"
 #define YEL    "\x1B[33m"
@@ -21,3 +24,6 @@ char PROMPT[PROMPT_MAX] = "gmteja";
 char CWD[PATH_MAX];
 char INPUT[20];
 int COMMAND=0;
+char DELIMETER = ' ';
+char **ARGS = NULL;
+int len = 0;
