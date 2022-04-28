@@ -14,3 +14,7 @@ bash like shell implementation
  * rm fileName
  * copy fileName
  * pwd
+ * ls
+ * data
+ * mkdir
+ * rmdir
