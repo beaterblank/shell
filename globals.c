@@ -3,6 +3,13 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <string.h>
+#include <dirent.h>
+#include <errno.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <time.h>
 
 #define PROMPT_MAX 10
 
@@ -23,7 +30,6 @@
 char PROMPT[PROMPT_MAX] = "gmteja";
 char CWD[PATH_MAX];
 char INPUT[20];
-int COMMAND=0;
 char DELIMETER = ' ';
 char **ARGS = NULL;
 int len = 0;

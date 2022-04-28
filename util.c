@@ -74,10 +74,12 @@ int split ()
     return count;
 }
 
+
+
 void parse(){
     len = split();
     if(strcmp(ARGS[0],"echo")==0){print();}
-    if(strcmp(ARGS[0],"clear")==0){printf(CLEAR);}
+    if(strcmp(ARGS[0],"clear")==0){system("clear");}
     if(strcmp(ARGS[0],"add")==0){add();}
     if(strcmp(ARGS[0],"sub")==0){sub();}
     if(strcmp(ARGS[0],"div")==0){divide();}
@@ -88,17 +90,8 @@ void parse(){
     if(strcmp(ARGS[0],"rm")==0){delete();}
     if(strcmp(ARGS[0],"copy")==0){copy();}
     if(strcmp(ARGS[0],"pwd")==0){pwd();}
-}
-
-
-char* join_str() {
-    char* str = NULL;             
-    size_t total_length = 0;                     
-    for (int i = 1; i < len; i++) total_length += strlen(ARGS[i]);
-    str = (char*) malloc(total_length);  
-    str[0] = '\0';                      
-    for (int i = 1; i < len; i++) {
-        strcat(str, ARGS[i]);
-    }
-    return str;
+    if(strcmp(ARGS[0],"ls")==0){_ls(0,1);}
+    if(strcmp(ARGS[0],"date")==0){date();}
+    if(strcmp(ARGS[0],"mkdir")==0){makedir();}
+    if(strcmp(ARGS[0],"rmdir")==0){removedir();}
 }

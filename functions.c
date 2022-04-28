@@ -1,4 +1,8 @@
-
+void clearArgs(){
+    for(int i=0;i<len;i++){
+        strcpy(ARGS[i],"");
+    }
+}
 void print(){
     for(int i=1;i<len;i++){
         printf("%s%c",ARGS[i],DELIMETER);
@@ -40,7 +44,8 @@ char* readText(char* fname,long int size){
     return buffer;
 }
 void readTxt(){
-    printf("%s\n",readText(ARGS[1],findSize(ARGS[1])));
+    printf("%s",readText(ARGS[1],findSize(ARGS[1])));
+    clearArgs();
 }
 void changeDir(){
     if(chdir(ARGS[1])){
@@ -76,4 +81,56 @@ void copy(){
 void pwd(){
     getcwd(CWD, sizeof(CWD));
     printf("%s\n",CWD);
+}
+
+void _ls(int op_a,int op_l)
+{
+	struct dirent *d;
+	DIR *dh = opendir(CWD);
+	if (!dh)
+	{
+		if (errno = ENOENT)
+		{
+			perror("Directory doesn't exist");
+		}
+		else
+		{
+			perror("Unable to read directory");
+		}
+		exit(EXIT_FAILURE);
+	}
+	while ((d = readdir(dh)) != NULL)
+	{
+		if (!op_a && d->d_name[0] == '.')
+			continue;
+		printf("%s  ", d->d_name);
+		if(op_l) printf("\n");
+	}
+	if(!op_l)
+	printf("\n");
+}
+
+
+
+void date(){
+    time_t t = time(NULL);
+    struct tm tm = *localtime(&t);
+    printf("%02d / %02d / %04d ",tm.tm_mday,tm.tm_mon+1,tm.tm_year + 1900);
+    printf("\n");
+}
+
+void makedir(){
+    int ret = mkdir(ARGS[1], 0755);
+    if (ret == 0)
+        printf("Directory created successfully\n");
+    else
+        printf("Unable to create directory %s\n", ARGS[1]);
+}
+
+void removedir(){
+    int ret = rmdir(ARGS[1]);
+    if (ret == 0)
+        printf("Directory delted successfully\n");
+    else
+        printf("Unable to delete directory %s\n", ARGS[1]);
 }
