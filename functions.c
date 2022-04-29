@@ -57,6 +57,9 @@ void delete(){
         printf("pleast enter a valid file\n");
     }
 }
+void calandar(){
+    system(INPUT);
+}
 void copy(){
    char ch;
    FILE *source, *target;
@@ -77,12 +80,13 @@ void copy(){
    fclose(source);
 
 }
-
 void pwd(){
     getcwd(CWD, sizeof(CWD));
     printf("%s\n",CWD);
 }
-
+void processId(){
+    system(INPUT);
+}
 void _ls(int op_a,int op_l)
 {
 	struct dirent *d;
@@ -109,9 +113,9 @@ void _ls(int op_a,int op_l)
 	if(!op_l)
 	printf("\n");
 }
-
-
-
+void pkill(){
+    system(INPUT);
+}
 void date(){
     time_t t = time(NULL);
     struct tm tm = *localtime(&t);
@@ -126,7 +130,9 @@ void makedir(){
     else
         printf("Unable to create directory %s\n", ARGS[1]);
 }
-
+void diskspace(){
+    system(INPUT);
+}
 void removedir(){
     int ret = rmdir(ARGS[1]);
     if (ret == 0)
@@ -134,3 +140,4 @@ void removedir(){
     else
         printf("Unable to delete directory %s\n", ARGS[1]);
 }
+

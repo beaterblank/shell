@@ -79,19 +79,26 @@ int split ()
 void parse(){
     len = split();
     if(strcmp(ARGS[0],"echo")==0){print();}
-    if(strcmp(ARGS[0],"clear")==0){system("clear");}
-    if(strcmp(ARGS[0],"add")==0){add();}
-    if(strcmp(ARGS[0],"sub")==0){sub();}
-    if(strcmp(ARGS[0],"div")==0){divide();}
-    if(strcmp(ARGS[0],"mul")==0){mul();}
-    if(strcmp(ARGS[0],"touch")==0){newTxt();}
-    if(strcmp(ARGS[0],"cat")==0){readTxt();}
-    if(strcmp(ARGS[0],"cd")==0){changeDir();}
-    if(strcmp(ARGS[0],"rm")==0){delete();}
-    if(strcmp(ARGS[0],"copy")==0){copy();}
-    if(strcmp(ARGS[0],"pwd")==0){pwd();}
-    if(strcmp(ARGS[0],"ls")==0){_ls(0,1);}
-    if(strcmp(ARGS[0],"date")==0){date();}
-    if(strcmp(ARGS[0],"mkdir")==0){makedir();}
-    if(strcmp(ARGS[0],"rmdir")==0){removedir();}
+    else if(strcmp(ARGS[0],"clear")==0){printf(CLEAR);}
+    else if(strcmp(ARGS[0],"add")==0){add();}
+    else if(strcmp(ARGS[0],"sub")==0){sub();}
+    else if(strcmp(ARGS[0],"div")==0){divide();}
+    else if(strcmp(ARGS[0],"mul")==0){mul();}
+    else if(strcmp(ARGS[0],"touch")==0){newTxt();}
+    else if(strcmp(ARGS[0],"cat")==0){readTxt();}
+    else if(strcmp(ARGS[0],"cd")==0){changeDir();}
+    else if(strcmp(ARGS[0],"rm")==0){delete();}
+    else if(strcmp(ARGS[0],"copy")==0){copy();}
+    else if(strcmp(ARGS[0],"pwd")==0){pwd();}
+    else if(strcmp(ARGS[0],"ls")==0){_ls(0,1);}
+    else if(strcmp(ARGS[0],"date")==0){date();}
+    else if(strcmp(ARGS[0],"cal")==0){calandar();}
+    else if(strcmp(ARGS[0],"mkdir")==0){makedir();}
+    else if(strcmp(ARGS[0],"rmdir")==0){removedir();}
+    else if(strcmp(ARGS[0],"df")==0){diskspace();}
+    else if(strcmp(ARGS[0],"ps")==0){processId();}
+    else if(strcmp(ARGS[0],"kill")==0){pkill();}
+    else{
+        printf("please enter a valid command\n");
+    }
 }
