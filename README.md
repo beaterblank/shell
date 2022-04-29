@@ -2,6 +2,7 @@
 bash like shell implementation
 
 ## example of commands are :
+
  * echo string
  * add 1 2
  * sub 2 3 
@@ -15,6 +16,10 @@ bash like shell implementation
  * copy fileName
  * pwd
  * ls
- * data
+ * date
+ * cal
  * mkdir
  * rmdir
+ * df
+ * ps
+ * kill
